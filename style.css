@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Comic Sans MS', cursive;
+}
+
+/* 🌈 Animated universe background */
+.background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, #ffb6c1, #b5e7ff, #ffeaa7);
+  background-size: 300% 300%;
+  animation: bgMove 10s infinite alternate;
+  z-index: -1;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* 🌍 Center everything */
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 🐶 Puppy */
+.puppy {
+  font-size: 90px;
+  animation: bounce 1.2s infinite;
+  transition: transform 0.3s;
+}
+
+.puppy.thinking {
+  animation: wiggle 1s infinite;
+}
+
+.puppy.excited {
+  animation: jump 0.6s infinite;
+}
+
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(8deg); }
+  50% { transform: rotate(-8deg); }
+  75% { transform: rotate(8deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes jump {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-40px); }
+}
+
+/* 🎴 Card */
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 360px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* ✏️ Inputs & buttons */
+input {
+  padding: 10px;
+  width: 80%;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #ff7675;
+  color: white;
+}
+
+.truth { background: #74b9ff; }
+.dare { background: #ff6b81; }
